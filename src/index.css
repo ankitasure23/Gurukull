@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+body {
+    background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
+    position: relative;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,body {
+  width:100%;
+  max-width: 100vw;
+  overflow-x:hidden;
+
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.5) 5px, transparent 5px),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 4px, transparent 4px),
+        radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.4) 3px, transparent 3px);
+    background-size: 100px 100px, 70px 70px, 50px 50px;
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+.card{
+  border: 4px transparent; 
+  background-color: transparent;/*hsl(0, 21%, 95%);*/
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0.2, 0.3, 0.5, 1); 
+  transition: transform 0.3s ease-in-out;
+  width: 30rem;
+  height: 30rem;
+}
+
+.card:hover{
+  transform: translateY(-10px); 
+}
+
+.about {
+  box-shadow: 0 5px 15px rgba(0.2, 0.8, 0.5, 1);
+}
