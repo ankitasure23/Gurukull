@@ -1,11 +1,11 @@
 import React from 'react';
 import Card from './Card.jsx';
-import Multilingual from '../assets/multilingual.png';
-import Offline from '../assets/offline.png';
-import LowBandwidth from '../assets/bandwidth.png';
-import Gamified from '../assets/gamified.png';
-import Cognitive from '../assets/cognitive.png';
-import TeacherAnalytics from '../assets/teacherAnalytics.png';
+import Multilingual from '../../../assets/multilingual.png';
+import Offline from '../../../assets/offline.png';
+import LowBandwidth from '../../../assets/bandwidth.png';
+import Gamified from '../../../assets/gamified.png';
+import Cognitive from '../../../assets/cognitive.png';
+import TeacherAnalytics from '../../../assets/teacherAnalytics.png';
 
 function Features() {
     return (

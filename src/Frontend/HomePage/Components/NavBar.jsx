@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
 import Button from './Button.jsx'
-import Home from '../assets/home.png'
-import Lesson from '../assets/lesson.png'
-import Quiz from '../assets/quiz.png'
-import Dashboard from '../assets/dashboard.png'
-import Settings from '../assets/settings.png'
-import Login from '../assets/login.png'
-import Signup from '../assets/signup.png'
-import Language from '../assets/language.png'
+import Home from '../../../assets/home.png'
+import Lesson from '../../../assets/lesson.png'
+import Quiz from '../../../assets/quiz.png'
+import Dashboard from '../../../assets/dashboard.png'
+import Settings from '../../../assets/settings.png'
+import Login from '../../../assets/login.png'
+import Signup from '../../../assets/signup.png'
+import Language from '../../../assets/language.png'
 
 function NavBar() {
     const lang = [{ label: 'English', onClick: () => alert('Profile clicked') },

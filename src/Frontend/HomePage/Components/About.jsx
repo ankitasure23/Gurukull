@@ -1,8 +1,8 @@
 import React from 'react'
-import '../index.css'
+import '../../../index.css'
 import Card from './Card.jsx'
-import Vision from '../assets/vision.png'
-import Mission from '../assets/mission.png'
+import Vision from '../../../assets/vision.png'
+import Mission from '../../../assets/mission.png'
 
 function About() { 
     return (

@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import HomePage from './Pages/HomePages.jsx'
+import HomePage from './Frontend/HomePage/Pages/HomePages.jsx';
 
 function App() {
   return (
