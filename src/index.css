@@ -1,20 +1,50 @@
 @import "tailwindcss";
 
-body {
+.home-page {
     background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
     position: relative;
     height: 100%;
     font-family: 'Poppins', sans-serif;
 }
 
-html,body {
+html,.home-page {
   width:100%;
-  max-width: 100vw;
+  max-height: 100vh;
   overflow-x:hidden;
-
 }
 
-body::before {
+.subject-selection {
+  background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,.subject-selection {
+  width:100%;
+  height: 100%;
+  overflow-x:hidden;
+}
+
+.subject-selection::before {
+  content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.5) 5px, transparent 5px),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 4px, transparent 4px),
+        radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.4) 3px, transparent 3px);
+    background-size: 100px 100px, 70px 70px, 50px 50px;
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home-page::before {
     content: "";
     position: absolute;
     top: 0;
