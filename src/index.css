@@ -86,6 +86,13 @@ html,.profile-container {
     z-index: 0;
 }
 
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
 @keyframes float {
     0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
     33% { transform: translate(30px, -30px) rotate(120deg); }
