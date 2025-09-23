@@ -10,6 +10,9 @@ import Login from '../../../assets/login.png'
 import Signup from '../../../assets/signup.png'
 import Language from '../../../assets/language.png'
 import Subject from '../../Lessons/Pages/SubjectSelection.jsx'
+import Pragya from '../../../assets/Pragya.png'
+import Profile from '../../../assets/Profile.png'
+import ProfilePage from '../../Profile/Pages/ProfilePage.jsx'
 
 
 function NavBar() {
@@ -18,6 +21,10 @@ function NavBar() {
     const handleLessonClick = () => {
         navigate('/subject-selection');
     }
+
+    const handleProfileClick = () => {
+        navigate('/my-profile');
+    }
     const lang = [{ label: 'English', onClick: () => alert('Profile clicked') },
     { label: 'Bengali', onClick: () => alert('Settings clicked') },
 { label: 'Hindi', onClick: () => alert('Logout clicked') }];
@@ -25,8 +32,9 @@ function NavBar() {
         <>
             <nav className='p-4'>
                 <div className='flex justify-between items-center'>
-                    <div>
-                        <h2 className='font-bold text-5xl' style={{ color: '#2C1F4A' }}>Pragya</h2>
+                    <div className='flex flex-row'>
+                        <img className='w-36' src={Pragya} alt="" />
+                        <h2 className='font-bold text-4xl justify-center text-center pt-7' style={{ color: '#2C1F4A' }}>Pragya</h2>
                     </div>
                     <div className='flex gap-6'>
                         <Button name="Home" icon={Home}></Button>
@@ -37,6 +45,7 @@ function NavBar() {
                         <Button name="Language" dropDownMenu={lang} icon={Language}></Button>
                         <Button name="Login" icon={Login}></Button>
                         <Button name="Signup" icon={Signup}></Button>
+                        <Button name="My Profile" icon={Profile} onClick={handleProfileClick}></Button>
                     </div>
                 </div>
                 
