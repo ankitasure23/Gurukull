@@ -9,7 +9,7 @@ import Computer from "../../../assets/computer.png";
 
 const syllabus = {
   Physics: {
-    6: ["Motion basics", "Forces basics"],
+    6: ["Motion basics", "Forces basics" ,"Electricity"],
     7: ["Energy forms", "Newton’s Laws"],
     8: ["Work & Power", "Friction"],
     9: ["Gravitation", "Sound"],
