@@ -7,6 +7,7 @@ import HeroSection from '../Components/HeroSection.jsx'
 import Features from '../Components/Features.jsx'
 import Footer from '../Components/Footer.jsx'
 import About from '../Components/About.jsx'
+import Pragya from '../../../assets/'
 
 function HomePages() {
     return (
