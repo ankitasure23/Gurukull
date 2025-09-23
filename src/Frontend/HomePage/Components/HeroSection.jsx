@@ -11,7 +11,7 @@ import Mathematics from '../../../assets/mathematics.png';
 function HeroSection() {
     return (
         <div className='flex items-center justify-around p-10'>
-            <div className='flex flex-col gap-10'>
+            <div className='flex flex-col gap-10 animate-pulse'>
                 <Button name="Science" icon={Science}></Button>
                 <Button name="Technology" icon={Technology}></Button>
                 <Button name="Engineering" icon={Engineering}></Button>

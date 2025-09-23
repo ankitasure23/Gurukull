@@ -86,6 +86,9 @@ html,.profile-container {
     z-index: 0;
 }
 
+.group:hover{
+  animation: var(--animate-ping);
+}
 
 @keyframes pulse {
   50% {
