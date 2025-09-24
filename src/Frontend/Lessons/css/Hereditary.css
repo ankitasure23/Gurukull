@@ -1,0 +1,74 @@
+/* index.css or a component-specific CSS file */
+
+/* Make draggable images slightly enlarge on hover */
+.cursor-grab:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Drop zones hover effect */
+.drop-zone-hover {
+  background-color: #d1fae5; /* light green */
+  border-color: #10b981; /* emerald-500 */
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Punnett square grid cells */
+.punnett-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Highlight result messages */
+.result-correct {
+  background-color: #d1fae5; /* green-100 */
+  color: #065f46; /* green-800 */
+  border: 1px solid #10b981; /* green-300 */
+}
+
+.result-wrong {
+  background-color: #fee2e2; /* red-100 */
+  color: #991b1b; /* red-800 */
+  border: 1px solid #f87171; /* red-300 */
+}
+
+.result-warning {
+  background-color: #fef3c7; /* yellow-100 */
+  color: #78350f; /* yellow-800 */
+  border: 1px solid #facc15; /* yellow-300 */
+}
+
+/* Card shadows and rounded corners */
+.card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Punnett square grid for mobile */
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .flex-row {
+    flex-direction: column !important;
+  }
+  .lg\:order-1,
+  .lg\:order-2 {
+    order: initial !important;
+  }
+}
