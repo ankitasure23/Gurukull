@@ -7,41 +7,16 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html,.home-page {
+html {
   width:100%;
   max-width: 100vw;
   overflow-x:hidden;
 }
 
-.subject-selection {
-  background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
-  position: relative;
-  min-height: 100vh;
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-}
-
-html,.subject-selection {
+.home-page {
   width:100%;
   max-width: 100vw;
   overflow-x:hidden;
-}
-
-.subject-selection::before {
-  content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.5) 5px, transparent 5px),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 4px, transparent 4px),
-        radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.4) 3px, transparent 3px);
-    background-size: 100px 100px, 70px 70px, 50px 50px;
-    animation: float 20s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
 }
 
 .home-page::before {
@@ -61,6 +36,38 @@ html,.subject-selection {
     z-index: 0;
 }
 
+.subject-selection {
+  background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
+  
+  min-height: 100vh;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.subject-selection {
+  width:100%;
+  max-width: 100vw;
+  overflow-x:hidden;
+}
+
+.subject-selection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.5) 5px, transparent 5px),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 4px, transparent 4px),
+      radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.4) 3px, transparent 3px);
+  background-size: 100px 100px, 70px 70px, 50px 50px;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
 .profile-container {
   background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
   position: relative;
@@ -69,7 +76,7 @@ html,.subject-selection {
   font-family: 'Poppins', sans-serif;
 }
 
-html,.profile-container {
+.profile-container {
   width:100%;
   max-width: 100vw;
   overflow-x:hidden;
@@ -131,4 +138,560 @@ html,.profile-container {
 
 .about {
   box-shadow: 0 5px 15px rgba(0.2, 0.8, 0.5, 1);
+}
+
+
+/* App container */
+.App {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
+  padding: 20px;
+  color: #4B0082;
+  text-align: center;
+}
+
+/* headings and layout */
+h1 { margin-bottom: 12px; }
+.top-row { display: flex; gap: 18px; justify-content: center; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; }
+
+.element-selection { font-weight: bold; margin-right: 10px; }
+.info-panel {
+  background: rgba(255,255,255,0.18);
+  padding: 12px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: left;
+}
+
+/* instructions */
+.instructions {
+  background: rgba(255,255,255,0.12);
+  padding: 12px;
+  border-radius: 10px;
+  margin: 10px auto;
+  width: 760px;
+  text-align: left;
+}
+.instructions ul { margin-left: 20px; }
+
+/* element pills and small buttons */
+.elements { display: flex; gap: 12px; justify-content: center; margin: 12px 0 18px 0; align-items: center; }
+.element {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+button.small { padding: 8px 12px; border-radius: 8px; border: none; cursor: pointer; background: #4B0082; color: #fff; }
+
+/* atom area */
+.atom-area {
+  position: relative;
+  width: 700px;
+  height: 520px;
+  margin: 0 auto 24px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* nucleus (center) */
+.nucleus {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.28);
+  border: 3px solid #4B0082;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nucleus-label { font-weight: bold; margin-bottom: 6px; }
+.nucleus-particles { display: flex; flex-wrap: wrap; justify-content: center; }
+
+/* particle common */
+.particle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+/* shells (visual rings) */
+.shell {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px dashed #4B0082;
+  z-index: 10;
+  width: 220px; height: 220px; /* default, overridden by shell-n */
+}
+.shell-1 { width: 220px; height: 220px; }
+.shell-2 { width: 340px; height: 340px; }
+.shell-3 { width: 460px; height: 460px; }
+
+.shell-label { position: absolute; top: -20px; width: 100%; text-align: center; color: #4B0082; font-weight: bold; }
+
+/* electron appearance */
+.electron { background: #FBC02D; color: #000; width: 30px; height: 30px; font-weight: bold; }
+
+/* orbit parent uses animation; child at translateX(radius) remains distance from center */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* win message */
+.win-message { margin-top: 12px; font-size: 1.2rem; color: #FF00FF; text-shadow: 0 0 10px #fff; }
+
+/* small responsive */
+@media (max-width: 900px) {
+  .atom-area { width: 90%; height: 420px; }
+  .instructions, .info-panel { width: 92%; margin: 8px auto; }
+}
+
+
+/* Wrapper for Periodic Table page */
+.periodic-table-page {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
+  color: #4b0082;
+  min-height: 100vh;
+}
+
+.periodic-table-page h1 {
+  margin-bottom: 10px;
+}
+
+/* Clue panel */
+.periodic-table-page .clue {
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Periodic Table grid */
+.periodic-table-page .table {
+  display: grid;
+  grid-template-columns: repeat(10, 80px);
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* Individual element card */
+.periodic-table-page .pt-element {
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, border 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.periodic-table-page .pt-element:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.35);
+}
+
+.periodic-table-page .pt-element .symbol {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.periodic-table-page .pt-element .name {
+  font-size: 0.8rem;
+}
+
+/* Message after each selection */
+.periodic-table-page .message {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Treasure tracker */
+.periodic-table-page .treasure {
+  margin-top: 15px;
+  font-size: 1.3rem;
+}
+
+.periodic-table-page .treasure .step {
+  opacity: 0.3;
+  margin: 0 3px;
+}
+
+.periodic-table-page .treasure .step.filled {
+  opacity: 1;
+}
+
+/* Teaching / info section */
+.periodic-table-page .teaching {
+  margin-top: 25px;
+  text-align: left;
+  max-width: 700px;
+  margin-inline: auto;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.periodic-table-page .teaching h2 {
+  margin-bottom: 10px;
+}
+
+.periodic-table-page .teaching p {
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .periodic-table-page .table {
+    grid-template-columns: repeat(5, 60px);
+    gap: 6px;
+  }
+
+  .periodic-table-page .pt-element {
+    padding: 6px;
+  }
+
+  .periodic-table-page .pt-element .symbol {
+    font-size: 1rem;
+  }
+
+  .periodic-table-page .pt-element .name {
+    font-size: 0.7rem;
+  }
+}
+
+.sorting-page {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(150deg, #9a4be9 0%, #e0dae7 50%, #ed85f8 100%);
+  color: #4b0082;
+  min-height: 100vh;
+}
+
+.sorting-page h1 {
+  margin-bottom: 12px;
+}
+
+/* Sorting technique description panel */
+.sorting-page .teaching {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 700px;
+  margin-inline: auto;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.sorting-page .teaching h2 {
+  margin-bottom: 8px;
+}
+
+.sorting-page .teaching p {
+  line-height: 1.5;
+}
+
+/* Clue / info panel */
+.sorting-page .clue {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Array container */
+.sorting-page .table {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* Each element card */
+.sorting-page .pt-element {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  border: 2px solid #4b0082;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.sorting-page .pt-element:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.35);
+}
+
+/* Active elements being compared */
+.sorting-page .pt-element.active {
+  background: yellow;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Buttons */
+.sorting-page .controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sorting-page button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #4b0082;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.sorting-page button:hover {
+  transform: translateY(-2px);
+  background: #6a00c4;
+}
+
+/* Sorting method selector */
+.sorting-page select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 2px solid #4b0082;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Message panel */
+.sorting-page .message {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sorting-page .pt-element {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .sorting-page .teaching {
+    width: 90%;
+    padding: 12px;
+  }
+}
+
+@import "tailwindcss";
+.class8-container {
+  background: #f3e8ff;
+  background-size: 20px 20px;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+.class8-container::before,
+.class8-container::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+  background: none !important;
+}
+
+.class8-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.class8-title {
+  font-size: 2.5rem;
+  color: #3f0470; 
+  margin-bottom: 0.5rem;
+}
+
+.class8-subtitle {
+  font-size: 1.2rem;
+  color: #3f0470;
+  margin-bottom: 2rem;
+}
+
+.class8-instructions {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.class8-instructions h3 {
+  color: #3f0470;
+  margin-bottom: 0.5rem;
+}
+
+.class8-stage-selection h3,
+.class8-dropzone-container h3 {
+  color: #3f0470;
+  margin-bottom: 0.75rem;
+}
+
+.class8-draggable-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.class8-draggable {
+  cursor: grab;
+  transition: transform 0.2s;
+}
+.class8-draggable:active {
+  cursor: grabbing;
+}
+.class8-draggable:hover {
+  transform: scale(1.05);
+}
+
+.class8-img {
+  width: 96px;
+  height: 96px;
+  border: 2px solid #3f0470;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.class8-img-label {
+  font-size: 0.8rem;
+  color: #3f0470;
+  margin-top: 0.25rem;
+}
+
+.class8-dropzone-container {
+  margin-bottom: 2rem;
+}
+.class8-dropzone-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.class8-dropzone-wrapper p {
+  margin-top: 0.25rem;
+  color: #3f0470;
+}
+
+.class8-dropzone {
+  width: 96px;
+  height: 96px;
+  border: 2px dashed #9ca3af;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fefefe;
+  transition: all 0.2s;
+}
+.class8-dropzone-over {
+  border-color: #3f0470;
+  background: #f3e8ff;
+  transform: scale(1.05);
+}
+
+.class8-dropzone-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.class8-dropzone-text {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.class8-all-placed {
+  font-style: italic;
+  color: #9ca3af;
+}
+
+.class8-feedback {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+.class8-feedback-correct {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+.class8-feedback-wrong {
+  background: #ffedd5;
+  color: #b45309;
+  border: 1px solid #fcd34d;
+}
+
+.class8-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.class8-buttons button {
+  background: #3f0470;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+.class8-buttons button:hover {
+  background: #3f0470;
+  transform: translateY(-2px);
 }

@@ -1,0 +1,27 @@
+/* index.css or global CSS */
+
+/* Shadowed, rounded cards hover effect */
+.shadow-lg:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+.instructions {
+    max-width: fit-content;
+}
+/* Smooth input sliders */
+input[type="range"] {
+  accent-color: #8b5cf6; /* purple-500 */
+}
+
+/* Chart container */
+canvas {
+  max-height: 400px;
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
