@@ -3,6 +3,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const connectDB = require('./database/db');
 const userRoutes = require('./routes/userRoutes');
+const profileRoutes = require('./routes/profileRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -15,6 +17,8 @@ connectDB();
 
 // --- all  Routes  are ---
 app.use('/api/users', userRoutes);
+app.use('/api/profile', profileRoutes);
+app.use('/api/auth', authRoutes);
 
 // --- for testing -- Test Route ---
 app.get('/api', (req, res) => {

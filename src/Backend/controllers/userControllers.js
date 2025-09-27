@@ -1,4 +1,7 @@
 const User = require('../models/user');
+const Profile = require('../models/Profile');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 // --- GET all users ---
 const getUsers = async (req, res) => {
@@ -69,12 +72,28 @@ const signup = async (req, res) => {
       return res.status(400).json({ message: "Email already registered" });
     }
 
-    const newUser = new User({ name, email, age, password });
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Save user
+    const newUser = new User({ name, email, age, password: hashedPassword });
     const savedUser = await newUser.save();
+
+    // Create Profile automatically
+    const newProfile = new Profile({
+      userId: savedUser._id,
+      full_name: savedUser.name,
+      email: savedUser.email,
+      school: "",
+      language: ""
+    });
+    await newProfile.save();
 
     res.status(201).json({
       message: "Signup successful",
-      user: savedUser,
+      user: { id: savedUser._id, name: savedUser.name, email: savedUser.email },
+      profile: newProfile
     });
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -89,20 +108,31 @@ const login = async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) return res.status(404).json({ message: "User not found" });
 
-    if (user.password !== password) {
-      return res.status(401).json({ message: "Invalid credentials" });
-    }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(401).json({ message: "Invalid credentials" });
+
+    // Fetch user's profile
+    const profile = await Profile.findOne({ userId: user._id });
+
+    // Create JWT token
+    const token = jwt.sign(
+      { id: user._id },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
 
     res.json({
       message: "Login successful",
-      user,
+      token,
+      user: { id: user._id, name: user.name, email: user.email },
+      profile
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-// ✅ Export everything
+// ✅ Export all functions
 module.exports = {
   getUsers,
   getUserById,
