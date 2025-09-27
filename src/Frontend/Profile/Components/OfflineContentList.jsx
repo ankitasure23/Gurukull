@@ -1,16 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function OfflineContentList() {
-  const [downloads, setDownloads] = useState([
-    { id: 1, title: "Math Quiz - Fractions" },
-    { id: 2, title: "Science Video - Plants" },
-    { id: 3, title: "English Quiz - Verbs"},
-    { id: 4, title: "Social Studies Video - Climate"},
-    { id: 5, title: "Moral Science - Moral Stories"},
-  ]);
+  const [downloads, setDownloads] = useState([]);
 
-  const removeDownload = (id) =>
-    setDownloads(downloads.filter((item) => item.id !== id));
+  // Fetch offline content from backend on mount
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    fetch("http://localhost:5000/api/profile", {
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.offlineContent) setDownloads(data.offlineContent);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  // Remove download both locally and on backend
+  const removeDownload = (id) => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    fetch(`http://localhost:5000/api/profile/offline/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then(() => {
+        setDownloads(downloads.filter((item) => item._id !== id));
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className="space-y-3">
@@ -20,13 +48,13 @@ export default function OfflineContentList() {
         <ul className="space-y-2">
           {downloads.map((item) => (
             <li
-              key={item.id}
+              key={item._id}
               className="flex justify-between items-center p-2 border rounded"
             >
               <span>{item.title}</span>
               <button
                 className="bg-red-500 text-white px-3 py-1 rounded"
-                onClick={() => removeDownload(item.id)}
+                onClick={() => removeDownload(item._id)}
               >
                 Remove
               </button>

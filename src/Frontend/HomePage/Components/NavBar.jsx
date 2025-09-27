@@ -45,21 +45,27 @@ function NavBar() {
     }
   };
 
-  // Handle Login
-  const handleLogin = async () => {
-    try {
-      const res = await loginUser(loginData);
-      console.log("Login Response:", res);
-      if (res.user) {
-        alert("Login successful ✅");
-        setShowLogin(false); // close modal
-      } else {
-        alert(res.message || "Login failed ❌");
-      }
-    } catch (err) {
-      console.error(err);
+// Handle Login
+const handleLogin = async () => {
+  try {
+    const res = await loginUser(loginData);
+    console.log("Login Response:", res);
+
+    if (res.token) {
+      // ✅ Save token in localStorage for future API calls
+      localStorage.setItem("token", res.token);
+
+      alert("Login successful ✅");
+      setShowLogin(false); // close modal
+    } else {
+      alert(res.message || "Login failed ❌");
     }
-  };
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+  
 
   const lang = [
     { label: "English", onClick: () => alert("English selected") },
